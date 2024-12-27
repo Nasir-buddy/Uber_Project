@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
+console.log("inside user model creating user schema");
 const userSchema = new mongoose.Schema({
     fullname:{
         firstname: {
