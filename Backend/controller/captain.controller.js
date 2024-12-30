@@ -42,3 +42,8 @@ module.exports.registerCaptain = async (req, res, next) => {
     // Return a 201 status with the token and captain details
     res.status(201).json({ token, captain });
 }
+
+
+module.exports.logincaptain = async (req, res, next) => {
+    
+}
