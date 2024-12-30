@@ -4,8 +4,9 @@ const cors = require('cors');
 const express = require('express');
 const app = express();
 const connectToDb = require('./db/db');
-const userRoute = require('./routes/user.routes');
 const cookieParser = require('cookie-parser');
+const userRoute = require('./routes/user.routes');
+const captainRoute = require('./routes/captain.routes');
 connectToDb();
 
 /**
@@ -24,5 +25,8 @@ app.get('/',(req, res)=>{
 });
 // register user route to create user
 app.use('/user', userRoute);
+
+// captains routes
+app.use('/captains', captainRoute);
 
 module.exports = app;
