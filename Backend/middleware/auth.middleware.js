@@ -9,6 +9,11 @@ module.exports.authUser = async (req, res, next) => {
     if (!token) {
         return res.status(401).json({ message: 'Unauthorized' });
     }
+
+    const isBlackListed = await userModel.findOne({ token: token });
+    if (isBlackListed) {
+        res.status(401).json({ message: "unauthorized from blacklist token" });
+    }
     // if token is available then we decoding the token 
     try {
         // verifing the token with jwt token 
@@ -20,6 +25,6 @@ module.exports.authUser = async (req, res, next) => {
         // returning the found user to to route 
         return next();
     } catch (error) {
-        return res.status(401).json({ message: 'Unauthorized' });
+        return res.status(401).json({ message: 'Unauthorized from decoded data' });
     }
 }
