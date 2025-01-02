@@ -59,15 +59,21 @@ module.exports.loginUser = async (req, res, next) => {
     res.status(200).json({ token, user });
 }
 
+// Get user profile function
 module.exports.getUserProfile = async (req, res, next) => {
+    // Return user details in response
     res.status(200).json(req.user);
 }
 
+// Logout user function
 module.exports.logoutUser = async (req, res, next) => {
+    // Clear token cookie
     res.clearCookie('token');
-    const token = req.cookies.token || req.headers.authorization.split(' '[ 1 ]);
-
+    // Get token from cookies or authorization header
+    const token = req.cookies.token || req.headers.authorization.split(' ')[1];
+    // Add token to blacklist
     await blacklistTokenModel.create({ token });
     
+    // Return logout success message
     res.status(200).json({ message: 'Logged out' });
 }

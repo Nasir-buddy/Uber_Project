@@ -56,8 +56,6 @@ module.exports.authCaptain = async (req, res, next) => {
         // returning the found user to to route
         next();
     } catch (error) {
-        console.log(error);
-        
         res.status(401).json({ message: 'Unauthorized from decoded data' });
     }
 }
