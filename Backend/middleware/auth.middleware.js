@@ -2,6 +2,7 @@ const userModel = require('../models/user.model');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const blacklistTokenModel = require('../models/blacklistToken.model');
+const captainModel = require('../models/captain.model');
 
 // Middleware to authenticate the user
 module.exports.authUser = async (req, res, next) => {
@@ -27,7 +28,7 @@ module.exports.authUser = async (req, res, next) => {
         // returning the found user to to route 
         return next();
     } catch (error) {
-        return res.status(401).json({ message: 'Unauthorized from decoded data' });
+        return res.suserModeltatus(401).json({ message: 'Unauthorized from decoded data' });
     }
 }
 
@@ -42,17 +43,21 @@ module.exports.authCaptain = async (req, res, next) => {
     // checking the token is blacklisted or not
     const isBlackListed = await blacklistTokenModel.findOne({ token: token });
     if (isBlackListed) {
-        res.status(401).json({ message: "unauthorized from blacklist token" });
+        return res.status(401).json({ message: "unauthorized from blacklist token" });
     }
     // if token is available then we decoding the token 
     try {
         // verifing the token with jwt token 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         // then finding the user with that decoded token in db
-        const captain = await captainModel.findById(decoded._id);
+        const captain = await captainModel.findById(decoded._id); 
         // setting the found user into the req.user
         req.captain = captain;
+        // returning the found user to to route
+        next();
     } catch (error) {
+        console.log(error);
+        
         res.status(401).json({ message: 'Unauthorized from decoded data' });
     }
 }

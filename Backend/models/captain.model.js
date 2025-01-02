@@ -60,7 +60,7 @@ const captaiScheema = new mongoose.Schema({
 })
 
 captaiScheema.methods.generateAuthToken = function () {
-    const token = jwt.sign({ id: this._id }, process.env.JWT_SECRET, { expiresIn: '24h' });
+    const token = jwt.sign({ _id: this._id }, process.env.JWT_SECRET, { expiresIn: '24h' });
     return token;
 }
 
@@ -72,6 +72,6 @@ captaiScheema.statics.hashPassword = async function (password) {
     return await bcrypt.hash(password, 10);
 }
 
-const captainModel = mongoose.model('captain', captaiScheema);
+const captainModel = mongoose.model('Captain', captaiScheema);
 
 module.exports = captainModel;
