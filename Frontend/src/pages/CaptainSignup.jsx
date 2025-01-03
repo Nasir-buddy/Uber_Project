@@ -34,7 +34,7 @@ const CaptainSignup = () => {
       <div className='p-7 h-screen flex flex-col justify-between' >
         <div>
           <img className='w-16 mb-2' src="https://pngimg.com/uploads/uber/uber_PNG24.png" alt="" />
-          <h3 className='text-base mb-2 font-medium'>What's your name</h3>
+          <h3 className='text-base mb-2 font-medium'>What's your Captain name</h3>
           <div className='flex gap-2 mb-5'>
             <input
               className='bg-[#eeeeee] rounded px-4 w-1/2 py-2 border text-base placeholder:text-base'
@@ -49,7 +49,7 @@ const CaptainSignup = () => {
               type="text" placeholder="Lastname" />
           </div>
           <form action="" onSubmit={(e) => { submitHandler(e) }}>
-            <h3 className='text-base mb-2 font-medium'>What's your email</h3>
+            <h3 className='text-base mb-2 font-medium'>What's your Captain email</h3>
             <input
               className='bg-[#eeeeee] rounded px-4 py-2 mb-7 border w-full text-base placeholder:text-base'
               required
