@@ -1,34 +1,59 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const UserSignup = () => {
-  const [firstname, setFirstname] = useState("");
-  const [lastname, setLastname] = useState("");
-  const [email, setemail] = useState("")
-  const [password, setpassword] = useState("")
-  const [isCheck, setisCheck] = useState(false);
-  const [userData, setUserData] = useState({});
+// State to store the first name input
+const [firstname, setFirstname] = useState("");
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    if(!isCheck){
-      alert('Please agree to the terms and conditions');
-      return;
-    }
-    setUserData({
-      fullName: {
-        firstname: firstname,
-        lastname: lastname
-      },
-      email: email,
-      password: password
-    });
+// State to store the last name input
+const [lastname, setLastname] = useState("");
 
-    setFirstname("");
-    setLastname("");
-    setemail("");
-    setpassword("");
+// State to store the email input
+const [email, setemail] = useState("");
+
+// State to store the password input
+const [password, setpassword] = useState("");
+
+// State to store the checkbox status
+const [isCheck, setisCheck] = useState(false);
+
+// State to store the user data object
+const [userData, setUserData] = useState({});
+
+// Function to handle form submission
+const submitHandler = (e) => {
+  // Prevent the default form submission behavior
+  e.preventDefault();
+
+  // Check if the terms and conditions checkbox is checked
+  if(!isCheck){
+    alert('Please agree to the terms and conditions');
+    return;
   }
+
+  // Update the userData state with the full name, email, and password
+  setUserData({
+    fullName: {
+      firstname: firstname,
+      lastname: lastname
+    },
+    email: email,
+    password: password
+  });
+
+  // Clear the first name input field
+  setFirstname("");
+
+  // Clear the last name input field
+  setLastname("");
+
+  // Clear the email input field
+  setemail("");
+
+  // Clear the password input field
+  setpassword("");
+}
+
+const UserSignup = () => {
   return (
     <div>
       <div className='p-7 h-screen flex flex-col justify-between' >

@@ -2,23 +2,34 @@ import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
+// State to store the email input
+const [email, setemail] = useState("")
+
+// State to store the password input
+const [password, setpassword] = useState("")
+
+// State to store the user data object
+const [userData, setUserData] = useState({ });
+
+// Function to handle form submission
+const submitHandler = (e) => {
+  // Prevent the default form submission behavior
+  e.preventDefault();
+
+  // Update the userData state with the email and password
+  setUserData({
+    email: email,
+    password: password
+  });
+
+  // Clear the email input field
+  setemail("");
+
+  // Clear the password input field
+  setpassword("");
+}
+
 const UserLogin = () => {
-  const [email, setemail] = useState("")
-  const [password, setpassword] = useState("")
-  const [userData, setUserData] = useState({ });
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-
-    setUserData({
-      email: email,
-      password: password
-    });
-
-    
-    setemail("");
-    setpassword("");
-  }
   return (
     <div className='p-7 h-screen flex flex-col justify-between' >
       <div>
