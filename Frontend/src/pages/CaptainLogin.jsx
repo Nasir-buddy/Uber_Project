@@ -2,27 +2,20 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 const CaptainLogin = () => {
-  // Declare state variable for email
   const [email, setemail] = useState("")
-  // Declare state variable for password
   const [password, setpassword] = useState("")
-  // Declare state variable for captain data
   const [captainData, setcaptainData] = useState({});
 
-  // Define submit handler function
   const submitHandler = (e) => {
-    // Prevent default form submission behavior
     e.preventDefault();
 
-    // Set captain data with email and password
     setcaptainData({
       email: email,
       password: password
     });
 
-    // Clear email input field
+
     setemail("");
-    // Clear password input field
     setpassword("");
   }
   return (

@@ -1,50 +1,34 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-// Declare state variable for first name
-const [firstname, setFirstname] = useState("");
-// Declare state variable for last name
-const [lastname, setLastname] = useState("");
-// Declare state variable for email
-const [email, setemail] = useState("")
-// Declare state variable for password
-const [password, setpassword] = useState("")
-// Declare state variable for terms and conditions checkbox
-const [isCheck, setisCheck] = useState(false);
-// Declare state variable for user data
-const [userData, setUserData] = useState({});
-
-// Define submit handler function
-const submitHandler = (e) => {
-    // Prevent default form submission behavior
-    e.preventDefault();
-    // Check if terms and conditions are agreed
-    if(!isCheck){
-        // Alert if terms and conditions are not agreed
-        alert('Please agree to the terms and conditions');
-        return;
-    }
-    // Set user data with full name, email, and password
-    setUserData({
-        fullName: {
-            firstname: firstname,
-            lastname: lastname
-        },
-        email: email,
-        password: password
-    });
-
-    // Clear first name input field
-    setFirstname("");
-    // Clear last name input field
-    setLastname("");
-    // Clear email input field
-    setemail("");
-    // Clear password input field
-    setpassword("");
-}
-
 const CaptainSignup = () => {
+   const [firstname, setFirstname] = useState("");
+   const [lastname, setLastname] = useState("");
+   const [email, setemail] = useState("")
+   const [password, setpassword] = useState("")
+   const [isCheck, setisCheck] = useState(false);
+   const [userData, setUserData] = useState({});
+ 
+   const submitHandler = (e) => {
+     e.preventDefault();
+     if(!isCheck){
+       alert('Please agree to the terms and conditions');
+       return;
+     }
+     setUserData({
+      fullName: {
+         firstname: firstname,
+         lastname: lastname
+       },
+       email: email,
+       password: password
+     });
+
+     setFirstname("");
+     setLastname("");
+     setemail("");
+     setpassword("");
+   }
   return (
     <div>
       <div className='p-7 h-screen flex flex-col justify-between' >
