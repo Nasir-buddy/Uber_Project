@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const UserSignup = () => {
   const [firstname, setFirstname] = useState("");
-  const [Lastname, setLastname] = useState("");
+  const [lastname, setLastname] = useState("");
   const [email, setemail] = useState("")
   const [password, setpassword] = useState("")
   const [isCheck, setisCheck] = useState(false);
@@ -16,9 +16,9 @@ const UserSignup = () => {
       return;
     }
     setUserData({
-      uesrname: {
+      fullName: {
         firstname: firstname,
-        lastname: Lastname
+        lastname: lastname
       },
       email: email,
       password: password
@@ -44,7 +44,7 @@ const UserSignup = () => {
               type="text" placeholder="Firstname" />
             <input
               className='bg-[#eeeeee] rounded px-4 w-1/2 py-2 border text-base placeholder:text-base'
-              value={Lastname}
+              value={lastname}
               onChange={(e) => { setLastname(e.target.value) }}
               type="text" placeholder="Lastname" />
           </div>
