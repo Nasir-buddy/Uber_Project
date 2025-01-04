@@ -132,9 +132,9 @@ const CaptainSignup = () => {
               </div>
             </div>
 
-            <button className='w-full bg-black text-white py-5 mt-2 rounded flex items-center justify-center'>Continue</button>
+            <button className='w-full bg-black text-white py-5 mt-2 rounded flex items-center justify-center'>Create Captain Account</button>
           </form>
-          <p className='text-center mt-3'>Already have an account? <Link to={'/captain-login'} className='text-blue-600 '>Create Captain Account</Link></p>
+          <p className='text-center mt-3'>Already have an account? <Link to={'/captain-login'} className='text-blue-600 '>Login as Captain</Link></p>
         </div>
         <div>
           <p>
