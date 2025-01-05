@@ -11,7 +11,6 @@ const CaptainProtectedWrapper = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true);
     React.useEffect(() => {
         if (!token) {
-            console.log("No token found");
             navigate('/captain-login');
         }
         axios.get(`${import.meta.env.VITE_BASE_URL}/captains/profile`, {
@@ -20,7 +19,6 @@ const CaptainProtectedWrapper = ({ children }) => {
             }
         }).then(response => {
             if (response.status === 200) {
-                console.log("Captain found", response.data.captain);
                 setCaptain(response.data.captain);
                 setIsLoading(false);
             }
