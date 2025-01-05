@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { UNSAFE_ErrorResponseImpl, useNavigate } from 'react-router-dom'
 
 const CaptainLogout = () => {
     const token = localStorage.getItem('token');
@@ -16,8 +16,6 @@ const CaptainLogout = () => {
                 localStorage.removeItem('token');
                 navigate('/captain-login');
             }
-        }).catch((error) => {
-            alert("Error occur during logout the captains")
         })
     }, [navigate, token]);
 
