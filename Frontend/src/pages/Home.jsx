@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import 'remixicon/fonts/remixicon.css'
+import LocationSearchPanel from '../Components/LocationSearchPanel';
 
 const Home = () => {
   const [pickUp, setpickUp] = useState('');
@@ -42,7 +43,7 @@ const Home = () => {
       </div>
 
       <div className='h-screen flex flex-col justify-end absolute w-full top-0  rounded-t-lg'>
-        <div className=' bg-red-100 h-[20%] p-5 relative'>
+        <div className=' bg-white h-[20%] p-5 relative'>
           <h5
             ref={panelCloseRef}
             onClick={(e) => {
@@ -78,8 +79,8 @@ const Home = () => {
           </form>
         </div>
 
-        <div ref={panerRef} className='h-[0] bg-purple-500'>
-
+        <div ref={panerRef} className='h-[0] bg-[#eee]'>
+          {<LocationSearchPanel />}
         </div>
       </div>
 
