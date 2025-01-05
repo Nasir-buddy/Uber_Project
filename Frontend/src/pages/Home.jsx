@@ -19,14 +19,16 @@ const Home = () => {
   useGSAP(() => {
     if (panelOpen) {
       gsap.to(panerRef.current, {
-        height: '80%'
+        height: '80%',
+        padding: 20
       })
       gsap.to(panelCloseRef.current, {
         opacity: '1'
       })
     } else {
       gsap.to(panerRef.current, {
-        height: '0%'
+        height: '0%',
+        padding: 0
       })
       gsap.to(panelCloseRef.current, {
         opacity: '0'
