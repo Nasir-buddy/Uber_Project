@@ -6,7 +6,7 @@ const LocationSearchPanel = () => {
     return (
         <div className='scroll-auto'>
             {/* this is sample data */}
-            <div className='flex items-center justify-start gap-4 my-4'>
+            <div className='flex items-center border-2 border-white active:border-black transition-all duration-100 p-3 rounded-lg justify-start gap-4 my-4'>
                 <h2 className='bg-gray-300 flex items-center justify-center h-10 w-16 rounded-full '>
                     <i className="ri-map-pin-fill"></i>
                 </h2>

@@ -84,7 +84,7 @@ const Home = () => {
           {<LocationSearchPanel />}
         </div>
       </div>
-      <div className='fixed x-10 bottom-0 bg-white w-full py-3 px-3'>
+      <div className='fixed x-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
         <h3 className='text-xl font-semibold'>Choose a Vehicle</h3>
           <div className='flex items-center justify-between p-3 my-4 w-full border-2 active:border-black transition-all duration-75 rounded-xl'>
               <img className='h-16 bg-transparent ' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1631132572/assets/ff/62c74e-2819-46c9-83b6-0d9a8e4fe238/original/uber_green.png" alt="" />
