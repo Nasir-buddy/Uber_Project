@@ -122,7 +122,7 @@ const Home = () => {
       </div>
 
       <div ref={confirmedRideRef} className='fixed x-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
-        <ConfirmRide />
+        <ConfirmRide setvehiclePanel={setvehiclePanel} setpanelOpen={setpanelOpen}/>
       </div>
     </div>
   )
