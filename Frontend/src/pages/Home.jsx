@@ -5,6 +5,7 @@ import 'remixicon/fonts/remixicon.css'
 import LocationSearchPanel from '../Components/LocationSearchPanel';
 import VehiclePanel from '../Components/VehiclePanel';
 import ConfirmRide from '../Components/ConfirmRide';
+import WaitForDriver from '../Components/WaitForDriver';
 
 
 const Home = () => {
@@ -114,7 +115,7 @@ const Home = () => {
         </div>
 
         <div ref={panerRef} className='h-[0] bg-[#eee]'>
-          {<LocationSearchPanel setpanelOpen={setpanelOpen} setvehiclePanel={setvehiclePanel} />}
+          <LocationSearchPanel setpanelOpen={setpanelOpen} setvehiclePanel={setvehiclePanel} />
         </div>
       </div>
       <div ref={vehiclePanelRef} className='fixed x-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
@@ -122,7 +123,11 @@ const Home = () => {
       </div>
 
       <div ref={confirmedRideRef} className='fixed x-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
-        <ConfirmRide />
+        <ConfirmRide setconfirmRidePanel={setconfirmRidePanel} setvehiclePanel={setvehiclePanel} />
+      </div>
+
+      <div className='fixed x-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
+              <WaitForDriver />
       </div>
     </div>
   )
