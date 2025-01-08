@@ -4,7 +4,7 @@ const ConfirmRide = (props) => {
     return (
         <div>
             <div className='py-1 w-full flex justify-center'>
-                <i onClick={() => { props.setvehiclePanel(false) }} className="ri-arrow-down-wide-fill"></i>
+                <i className="ri-arrow-down-wide-fill"></i>
             </div>
             <h3 className='text-xl font-semibold'>Confirm Vehicle</h3>
             <div className='flex justify-between ga-3 flex-col items-center'>
@@ -44,7 +44,10 @@ const ConfirmRide = (props) => {
                     </div>
 
                 </div>
-                <button className='w-full bg-green-400 rounded-lg text-white font-semibold p-2'>
+                <button onClick={() => {
+                    props.setVehicleFound(true) 
+                    props.setconfirmRidePanel(false);
+                }} className='w-full bg-green-400 rounded-lg text-white font-semibold p-2'>
                     Confirm
                 </button>
             </div>
