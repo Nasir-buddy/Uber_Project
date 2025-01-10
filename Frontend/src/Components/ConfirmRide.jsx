@@ -44,6 +44,7 @@ const ConfirmRide = (props) => {
                     </div>
 
                 </div>
+                {/* all login for button */}
                 <button onClick={() => {
                     props.setVehicleFound(true) 
                     props.setconfirmRidePanel(false);
