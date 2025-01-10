@@ -10,17 +10,23 @@ import LookingForDriver from '../Components/LookingForDriver';
 
 
 const Home = () => {
+
+  // all use State for functionality.
   const [pickUp, setpickUp] = useState('');
   const [destination, setDestination] = useState('');
   const [panelOpen, setpanelOpen] = useState(false);
+  const [vehiclePanel, setvehiclePanel] = useState(false);
+  const [confirmRidePanel, setconfirmRidePanel] = useState(false);
+  const [vehicleFound, setVehicleFound] = useState(false);
+
+  //  use ref for reference variable
   const panerRef = useRef(null);
   const panelCloseRef = useRef(null);
   const confirmedRideRef = useRef(null);
   const vehiclePanelRef = useRef(null);
   const vehicleFoundRef = useRef(null);
-  const [vehiclePanel, setvehiclePanel] = useState(false);
-  const [confirmRidePanel, setconfirmRidePanel] = useState(false);
-  const [vehicleFound, setVehicleFound] = useState(false);
+
+  
 
   const submitHandler = () => {
     e.preventDefault();
