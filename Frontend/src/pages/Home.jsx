@@ -27,7 +27,7 @@ const Home = () => {
   const vehicleFoundRef = useRef(null);
 
   
-
+  //submit handler for avoiding reloading of page
   const submitHandler = () => {
     e.preventDefault();
 
