@@ -7,6 +7,7 @@ import VehiclePanel from '../Components/VehiclePanel';
 import ConfirmRide from '../Components/ConfirmRide';
 import WaitForDriver from '../Components/WaitForDriver';
 import LookingForDriver from '../Components/LookingForDriver';
+import WaitingForDriver from '../Components/WaitForDriver';
 
 
 const Home = () => {
@@ -18,13 +19,15 @@ const Home = () => {
   const [vehiclePanel, setvehiclePanel] = useState(false);
   const [confirmRidePanel, setconfirmRidePanel] = useState(false);
   const [vehicleFound, setVehicleFound] = useState(false);
-
+  const [waitingForDriver, setWaitingForDriver] = useState(false)
+  
   //  use ref for reference variable
   const panerRef = useRef(null);
   const panelCloseRef = useRef(null);
   const confirmedRideRef = useRef(null);
   const vehiclePanelRef = useRef(null);
   const vehicleFoundRef = useRef(null);
+  const waitingForDriverRef = useRef(null);
 
   
   //submit handler for avoiding reloading of page
@@ -89,6 +92,18 @@ const Home = () => {
     }
   }, [vehicleFound]);
 
+  useGSAP(() => {
+    if (waitingForDriver) {
+      gsap.to(waitingForDriverRef.current, {
+        transform: 'translateY(0)'
+      })
+    } else {
+      gsap.to(waitingForDriverRef.current, {
+        transform: 'translateY(100%)'
+      })
+    }
+  }, [waitingForDriver]);
+
   return (
     <div className='h-screen relative overflow-hidden'>
       <img className='w-16 mb-7 absolute left-5 top-5' src="https://logodownload.org/wp-content/uploads/2015/05/uber-logo-7.png" alt="" />
@@ -146,8 +161,11 @@ const Home = () => {
         <ConfirmRide setconfirmRidePanel={setconfirmRidePanel} setVehicleFound={setVehicleFound} />
       </div>
 
-      <div ref={vehicleFoundRef} className='fixed x-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
+      <div ref={vehicleFoundRef} setVehicleFound={setVehicleFound} className='fixed x-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
         <LookingForDriver />
+      </div>
+      <div setVehicleFound={setVehicleFound} ref={WaitingForDriver} className='fixed x-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
+        <WaitForDriver WaitForDriver={WaitingForDriver}/>
       </div>
     </div>
   )

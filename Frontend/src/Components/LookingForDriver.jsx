@@ -1,10 +1,10 @@
 import React from 'react'
 
-const LookingForDriver = () => {
+const LookingForDriver = (props) => {
     return (
         <div>
             <div className='py-1 w-full flex justify-center'>
-                <i onClick={() => { props.setvehiclePanel(false) }} className="ri-arrow-down-wide-fill"></i>
+                <i onClick={() => { props.setVehicleFound(false) }} className="ri-arrow-down-wide-fill"></i>
             </div>
             <h3 className='text-xl font-semibold'>Looking for a Driver</h3>
             <div className='flex justify-between ga-3 flex-col items-center'>
