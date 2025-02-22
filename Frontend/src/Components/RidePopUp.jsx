@@ -8,18 +8,31 @@ const RidePopUp = (props) => {
                     props.setconfirmRidePanel(false);
                 }}
             >
-                <i className="ri-arrow-down-wide-fill text-gray-500"></i>
+                <i className="ri-arrow-down-wide-fill text-gray-500 text-2xl hover:text-gray-700 transition-colors"></i>
             </div>
-            <h3 className='text-2xl font-semibold text-center mb-4'>New Ride Available!</h3>
-            <div className='flex items-center justify-between gap-4 my-3'>
-                <div className='flex items-center gap-2'>
-                    <img className='h-10 w-10 rounded-full object-cover ' src="https://th.bing.com/th/id/OIP.tLotgCDtzgTdwJcTiXWRCwHaEK?w=279&h=180&c=7&r=0&o=5&pid=1.7" alt="" />
-                    <h2 className='text-xl font-medium'>Harsh patel</h2>
+            <h3 className='text-3xl font-bold text-center mb-6 text-gray-800'>New Ride Available!</h3>
+            <div className='flex items-center justify-between gap-4 my-4 bg-gray-50 p-4 rounded-lg'>
+                <div className='flex items-center gap-3'>
+                    <div className='relative'>
+                        <img 
+                            className='h-12 w-12 rounded-full object-cover border-2 border-blue-500 shadow-md' 
+                            src="https://th.bing.com/th/id/OIP.tLotgCDtzgTdwJcTiXWRCwHaEK?w=279&h=180&c=7&r=0&o=5&pid=1.7" 
+                            alt="Rider profile" 
+                        />
+                        <div className='absolute bottom-0 right-0 h-3 w-3 bg-green-500 rounded-full border-2 border-white'></div>
+                    </div>
+                    <div>
+                        <h2 className='text-xl font-semibold text-gray-800'>Harsh Patel</h2>
+                        <p className='text-sm text-gray-500'>Premium Rider</p>
+                    </div>
                 </div>
-                <h5>2.2 KM</h5>
+                <div className='text-right'>
+                    <h5 className='text-lg font-medium text-blue-600'>2.2 KM</h5>
+                    <p className='text-sm text-gray-500'>Distance</p>
+                </div>
             </div>
             <div className='flex flex-col w-full'>
-                <hr className='w-full border-t-2 border-gray-200 mb-4' />
+                <hr className='w-full border-t-2 border-gray-100 my-4' />
                 <div className='space-y-4'>
                     {/* Pickup Location */}
                     <div className='flex items-start gap-4 p-4 border-b border-gray-200'>
