@@ -7,9 +7,9 @@ const CaptainHome = () => {
     <div className='h-screen p-2'>
 
       <div className='h-1/2'>
-        <div>
-          <img src="" alt="" />
-          <Link className='fixed top-5 right-4 h-10 w-10 bg-white flex items-center justify-center rounded-full '
+        <div className='fixed p-3 top-0 flex items-center justify-between w-full'>
+          <img className='w-16' src="https://logodownload.org/wp-content/uploads/2015/05/uber-logo-7.png" alt="" />
+          <Link className='h-10 w-10 bg-white flex items-center justify-center rounded-full '
             to={'/home'}>
             <i className="text-lg font-medium ri-logout-box-line"></i>
           </Link>
