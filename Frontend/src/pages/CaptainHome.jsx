@@ -72,7 +72,7 @@ const CaptainHome = () => {
           setConfirmRidePopupPanel={setConfirmRidePopupPanel}
         />
       </div>
-      <div ref={confirmRidePopupPanelRef} className='fixed z-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
+      <div ref={confirmRidePopupPanelRef} className='fixed z-10 bottom-0 translate-y-full bg-white w-full max-w-xl mx-auto left-0 right-0 py-3 px-3 rounded-t-2xl'>
         <ConfirmRidePopup
           setConfirmRidePopupPanel={setConfirmRidePopupPanel}
           setRidePopupPanel={setRidePopupPanel}
