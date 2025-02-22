@@ -2,7 +2,7 @@ import React from 'react'
 
 const RidePopUp = ({ setRidePopupPanel, setVehicleFound, setConfirmRidePopupPanel }) => {
     return (
-        <div className="px-6 py-4 bg-white rounded-lg shadow-lg"> {/* Changed p-4 to px-6 py-4 */}
+        <div className="p-2 bg-white rounded-lg"> {/* Updated padding */}
             <div className='py-2 w-full flex justify-center cursor-pointer'
                 onClick={() => {
                     setRidePopupPanel(false);
