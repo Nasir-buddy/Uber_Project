@@ -1,12 +1,12 @@
 import React from 'react'
 
-const ConfirmRide = (props) => {
+const RidePopUp = () => {
     return (
         <div>
             <div className='py-1 w-full flex justify-center'
-            onClick={() => {
-                props.setconfirmRidePanel(false);
-            }}
+                onClick={() => {
+                    props.setconfirmRidePanel(false);
+                }}
             >
                 <i className="ri-arrow-down-wide-fill"></i>
             </div>
@@ -50,7 +50,7 @@ const ConfirmRide = (props) => {
                 </div>
                 {/* all login for button */}
                 <button onClick={() => {
-                    props.setVehicleFound(true) 
+                    props.setVehicleFound(true)
                     props.setconfirmRidePanel(false);
                 }} className='w-full bg-green-400 rounded-lg text-white font-semibold p-2'>
                     Confirm
@@ -60,4 +60,4 @@ const ConfirmRide = (props) => {
     )
 }
 
-export default ConfirmRide
+export default RidePopUp

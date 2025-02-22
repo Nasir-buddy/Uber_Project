@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import CaptainDetails from '../Components/CaptainDetails'
+import RidePopUp from '../Components/RidePopUp'
 
 const CaptainHome = () => {
   return (
@@ -21,9 +22,13 @@ const CaptainHome = () => {
           alt="Driving"
         />
       </div>
-    <div className='mt-4 p-2'>
-      <CaptainDetails />
-    </div>
+      <div className='mt-4 p-2'>
+        <CaptainDetails />
+      </div>
+
+      <div className='fixed z-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
+        <RidePopUp />
+      </div>
     </div>
   )
 }
