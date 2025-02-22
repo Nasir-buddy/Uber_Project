@@ -6,7 +6,7 @@ const ConfirmRidePopup = (props) => {
     return (
         <div className='h-[90%]'>
             <div className="p-2 bg-white rounded-lg shadow-lg h-screen">
-                <div 
+                <div
                     className='py-2 w-full flex justify-center cursor-pointer'
                     onClick={() => setRidePopupPanel(false)}
                 >
@@ -14,7 +14,7 @@ const ConfirmRidePopup = (props) => {
                 </div>
 
                 <h3 className='text-3xl font-bold text-center mb-6 text-gray-800'>
-                    New Ride Available!
+                    Confirm this Ride to Start
                 </h3>
 
                 {/* Rider Info Card */}
@@ -41,7 +41,7 @@ const ConfirmRidePopup = (props) => {
 
                 <div className='flex flex-col w-full'>
                     <hr className='w-full border-t-2 border-gray-100 my-4' />
-                    
+
                     <div className='space-y-4'>
                         {/* Pickup Location */}
                         <div className='flex items-start gap-4 p-4 border-b border-gray-200'>
@@ -82,17 +82,21 @@ const ConfirmRidePopup = (props) => {
                     {/* Action Buttons */}
                     <div className='space-y-3 mt-6'>
                         <button
-                            onClick={() => {}}
+                            onClick={() => { }}
                             className='w-full bg-green-500 hover:bg-green-600 transition-colors rounded-lg text-white font-semibold p-3'
                         >
-                            Accept
+                            Confirm
                         </button>
 
                         <button
-                            onClick={() => setRidePopupPanel(false)}
+                            onClick={() => {
+                                props.setConfirmRidePopupPanel(false)
+                                props.setRidePopupPanel(false);
+                            }
+                            }
                             className='w-full bg-gray-200 hover:bg-gray-300 transition-colors rounded-lg text-gray-700 font-semibold p-3'
                         >
-                            Ignore
+                            Cancle
                         </button>
                     </div>
                 </div>
