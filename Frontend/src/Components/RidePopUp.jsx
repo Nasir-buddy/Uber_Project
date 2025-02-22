@@ -10,9 +10,9 @@ const RidePopUp = () => {
             >
                 <i className="ri-arrow-down-wide-fill"></i>
             </div>
-            <h3 className='text-xl font-semibold'>Confirm your Ride</h3>
+            <h3 className='text-xl font-semibold'>New Ride Available!</h3>
             <div className='flex justify-between ga-3 flex-col items-center'>
-                <img className='h-36 bg-red-300' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1631132572/assets/ff/62c74e-2819-46c9-83b6-0d9a8e4fe238/original/uber_green.png" alt="" />
+                {/* <img className='h-36 bg-red-300' src="https://www.uber-assets.com/image/upload/f_auto,q_auto:eco,c_fill,h_368,w_552/v1631132572/assets/ff/62c74e-2819-46c9-83b6-0d9a8e4fe238/original/uber_green.png" alt="" /> */}
                 <hr className='w-full border-t-2 border-gray-300 my-4' />
                 <div className='w-full'>
                     <div className='flex items-center gap-4 p-3 border-b-2 my-2'>
@@ -52,8 +52,13 @@ const RidePopUp = () => {
                 <button onClick={() => {
                     props.setVehicleFound(true)
                     props.setconfirmRidePanel(false);
-                }} className='w-full bg-green-400 rounded-lg text-white font-semibold p-2'>
+                }} className='w-full my-2 bg-green-400 rounded-lg text-white font-semibold p-2'>
                     Confirm
+                </button>
+
+                <button onClick={() => {
+                }} className='w-full bg-gray-400 rounded-lg text-gray-700 font-semibold p-2'>
+                    Ignore
                 </button>
             </div>
         </div>

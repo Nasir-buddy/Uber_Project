@@ -26,7 +26,7 @@ const CaptainHome = () => {
         <CaptainDetails />
       </div>
 
-      <div className='fixed z-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
+      <div className='fixed z-10 bottom-0  bg-white w-full py-3 px-3'>
         <RidePopUp />
       </div>
     </div>
