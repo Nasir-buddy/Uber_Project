@@ -1,8 +1,9 @@
 import React from 'react'
 
-const RidePopUp = ({ setRidePopupPanel, setVehicleFound, setConfirmRidePopupPanel }) => {
+const ConfirmRidePopup = (props) => {
     return (
-        <div className="px-6 py-4 bg-white rounded-lg shadow-lg"> {/* Changed p-4 to px-6 py-4 */}
+       <div className='h-[90%]'>
+         <div className="p-4 bg-white rounded-lg shadow-lg h-screen">
             <div className='py-2 w-full flex justify-center cursor-pointer'
                 onClick={() => {
                     setRidePopupPanel(false);
@@ -14,10 +15,10 @@ const RidePopUp = ({ setRidePopupPanel, setVehicleFound, setConfirmRidePopupPane
             <div className='flex items-center justify-between gap-4 my-4 bg-gray-50 p-4 rounded-lg'>
                 <div className='flex items-center gap-3'>
                     <div className='relative'>
-                        <img 
-                            className='h-12 w-12 rounded-full object-cover border-2 border-blue-500 shadow-md' 
-                            src="https://th.bing.com/th/id/OIP.tLotgCDtzgTdwJcTiXWRCwHaEK?w=279&h=180&c=7&r=0&o=5&pid=1.7" 
-                            alt="Rider profile" 
+                        <img
+                            className='h-12 w-12 rounded-full object-cover border-2 border-blue-500 shadow-md'
+                            src="https://th.bing.com/th/id/OIP.tLotgCDtzgTdwJcTiXWRCwHaEK?w=279&h=180&c=7&r=0&o=5&pid=1.7"
+                            alt="Rider profile"
                         />
                         <div className='absolute bottom-0 right-0 h-3 w-3 bg-green-500 rounded-full border-2 border-white'></div>
                     </div>
@@ -70,19 +71,18 @@ const RidePopUp = ({ setRidePopupPanel, setVehicleFound, setConfirmRidePopupPane
 
                 {/* Action Buttons */}
                 <div className='space-y-3 mt-6'>
-                    <button 
+                    <button
                         onClick={() => {
-                            setConfirmRidePopupPanel(true)
-                        }} 
+                        }}
                         className='w-full bg-green-500 hover:bg-green-600 transition-colors rounded-lg text-white font-semibold p-3'
                     >
                         Accecpt
                     </button>
 
-                    <button 
+                    <button
                         onClick={() => {
                             setRidePopupPanel(false);
-                        }} 
+                        }}
                         className='w-full bg-gray-200 hover:bg-gray-300 transition-colors rounded-lg text-gray-700 font-semibold p-3'
                     >
                         Ignore
@@ -90,7 +90,8 @@ const RidePopUp = ({ setRidePopupPanel, setVehicleFound, setConfirmRidePopupPane
                 </div>
             </div>
         </div>
+       </div>
     )
 }
 
-export default RidePopUp
+export default ConfirmRidePopup
