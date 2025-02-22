@@ -1,9 +1,31 @@
-import React from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import CaptainDetails from '../Components/CaptainDetails'
 import RidePopUp from '../Components/RidePopUp'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 const CaptainHome = () => {
+  const [ridePopupPanel, setRidePopupPanel] = useState(true); // Changed to true
+  const [vehicleFound, setVehicleFound] = useState(false);
+  const [confirmRidePanel, setConfirmRidePanel] = useState(false);
+  const ridePopupPanelRef = useRef(null);
+
+  useGSAP(() => {
+    gsap.to(ridePopupPanelRef.current, {
+      transform: ridePopupPanel ? 'translateY(0)' : 'translateY(100%)',
+      duration: 0.5,
+      ease: 'power2.out'
+    });
+  }, [ridePopupPanel]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setRidePopupPanel(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     // starting captain home 
     <div className='h-screen p-2'>
@@ -26,8 +48,12 @@ const CaptainHome = () => {
         <CaptainDetails />
       </div>
 
-      <div className='fixed z-10 bottom-0  bg-white w-full py-3 px-3'>
-        <RidePopUp />
+      <div ref={ridePopupPanelRef} className='fixed z-10 bottom-0 translate-y-full bg-white w-full py-3 px-3'>
+        <RidePopUp 
+          setRidePopupPanel={setRidePopupPanel}
+          setVehicleFound={setVehicleFound}
+          setConfirmRidePanel={setConfirmRidePanel}
+        />
       </div>
     </div>
   )

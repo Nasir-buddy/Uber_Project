@@ -1,11 +1,11 @@
 import React from 'react'
 
-const RidePopUp = (props) => {
+const RidePopUp = ({ setRidePopupPanel, setVehicleFound, setConfirmRidePanel }) => {
     return (
         <div className="p-4 bg-white rounded-lg shadow-lg">
             <div className='py-2 w-full flex justify-center cursor-pointer'
                 onClick={() => {
-                    props.setconfirmRidePanel(false);
+                    setRidePopupPanel(false);
                 }}
             >
                 <i className="ri-arrow-down-wide-fill text-gray-500 text-2xl hover:text-gray-700 transition-colors"></i>
@@ -72,8 +72,6 @@ const RidePopUp = (props) => {
                 <div className='space-y-3 mt-6'>
                     <button 
                         onClick={() => {
-                            props.setVehicleFound(true)
-                            props.setconfirmRidePanel(false);
                         }} 
                         className='w-full bg-green-500 hover:bg-green-600 transition-colors rounded-lg text-white font-semibold p-3'
                     >
@@ -82,7 +80,7 @@ const RidePopUp = (props) => {
 
                     <button 
                         onClick={() => {
-                            props.setconfirmRidePanel(false);
+                            setRidePopupPanel(false);
                         }} 
                         className='w-full bg-gray-200 hover:bg-gray-300 transition-colors rounded-lg text-gray-700 font-semibold p-3'
                     >
