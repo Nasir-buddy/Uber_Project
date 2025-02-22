@@ -52,9 +52,6 @@ const CaptainHome = () => {
             </div>
           </div>
         </div>
-        <button className='w-full bg-black rounded-lg text-white font-semibold p-2'>
-          Make a Payment
-        </button>
       </div>
     </div>
   )
