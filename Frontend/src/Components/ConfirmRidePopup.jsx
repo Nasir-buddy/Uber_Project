@@ -4,8 +4,8 @@ const ConfirmRidePopup = (props) => {
     const { setRidePopupPanel } = props;
 
     return (
-        <div className='h-[90%]'>
-            <div className="p-2 bg-white rounded-lg shadow-lg h-screen">
+        <div className='  overflow-y-auto'>
+            <div className="p-4 bg-white rounded-lg shadow-lg">
                 <div
                     className='py-2 w-full flex justify-center cursor-pointer'
                     onClick={() => setRidePopupPanel(false)}
@@ -13,7 +13,7 @@ const ConfirmRidePopup = (props) => {
                     <i className="ri-arrow-down-wide-fill text-gray-500 text-2xl hover:text-gray-700 transition-colors" />
                 </div>
 
-                <h3 className='text-3xl font-bold text-center mb-6 text-gray-800'>
+                <h3 className='text-2xl md:text-3xl font-bold text-center mb-6 text-gray-800'>
                     Confirm this Ride to Start
                 </h3>
 
@@ -29,7 +29,7 @@ const ConfirmRidePopup = (props) => {
                             <div className='absolute bottom-0 right-0 h-3 w-3 bg-green-500 rounded-full border-2 border-white' />
                         </div>
                         <div>
-                            <h2 className='text-xl font-semibold text-gray-800'>Harsh Patel</h2>
+                            <h2 className='text-lg md:text-xl font-semibold text-gray-800'>Harsh Patel</h2>
                             <p className='text-sm text-gray-500'>Premium Rider</p>
                         </div>
                     </div>
@@ -39,67 +39,76 @@ const ConfirmRidePopup = (props) => {
                     </div>
                 </div>
 
-                <div className='flex flex-col w-full'>
-                    <hr className='w-full border-t-2 border-gray-100 my-4' />
+                <div className='flex flex-col w-full space-y-4'>
+                    <hr className='w-full border-t-2 border-gray-100' />
 
-                    <div className='space-y-4'>
+                    {/* Location Details */}
+                    <div className='space-y-4 px-2'>
                         {/* Pickup Location */}
-                        <div className='flex items-start gap-4 p-4 border-b border-gray-200'>
+                        <div className='flex items-start gap-4 p-3 bg-gray-50 rounded-lg'>
                             <div className='pt-1'>
                                 <i className="ri-map-pin-fill text-xl text-blue-500" />
                             </div>
                             <div>
-                                <h3 className='text-xl font-semibold'>562/11-A</h3>
+                                <h3 className='text-lg font-semibold'>562/11-A</h3>
                                 <h5 className='text-gray-500 text-sm'>Kaikondrahalli, Bengaluru, Karnataka</h5>
                             </div>
                         </div>
 
                         {/* Destination */}
-                        <div className='flex items-start gap-4 p-4 border-b border-gray-200'>
+                        <div className='flex items-start gap-4 p-3 bg-gray-50 rounded-lg'>
                             <div className='pt-1'>
                                 <i className="ri-square-fill text-xl text-green-500" />
                             </div>
                             <div>
-                                <h2 className='text-xl font-semibold'>Third Wave Coffee</h2>
+                                <h2 className='text-lg font-semibold'>Third Wave Coffee</h2>
                                 <h5 className='text-gray-500 text-sm'>
-                                    17th Cross Rd, PWD Quarters, 1st Sector, HSR Layout, Bengaluru, Karnataka
+                                    17th Cross Rd, PWD Quarters, 1st Sector, HSR Layout, Bengaluru
                                 </h5>
                             </div>
                         </div>
 
                         {/* Price */}
-                        <div className='flex items-start gap-4 p-4 border-b border-gray-200'>
+                        <div className='flex items-start gap-4 p-3 bg-gray-50 rounded-lg'>
                             <div className='pt-1'>
                                 <i className="ri-money-rupee-circle-fill text-xl text-yellow-500" />
                             </div>
                             <div>
-                                <h3 className='text-xl font-semibold'>Rs. 193.20</h3>
+                                <h3 className='text-lg font-semibold'>Rs. 193.20</h3>
                                 <h5 className='text-gray-500 text-sm'>Cash/Card</h5>
                             </div>
                         </div>
                     </div>
 
                     {/* Action Buttons */}
-                    <div className='space-y-3 mt-6'>
-                       <div className='w-full flex items-center justify-center bg-green-500 hover:bg-green-600 transition-colors rounded-lg text-white font-semibold p-3'>
-                       <Link
-                            to='/captain-riding'
-                            
-                        >
-                            Confirm
-                        </Link>
-                       </div>
+                    <div className='space-y-4 mt-6 px-2'>
+                        <form onSubmit={(e) => submitHandler(e)}>
+                            <input
+                                className='border px-4 py-3 text-base rounded-lg w-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500'
+                                type="text" 
+                                placeholder='Enter the OTP'
+                                required 
+                            />
+                            <div className='mt-4 space-y-3'>
+                                <Link
+                                    to='/captain-riding'
+                                    className='block w-full text-center bg-green-500 hover:bg-green-600 transition-colors rounded-lg text-white font-semibold p-3'
+                                >
+                                    Confirm Ride
+                                </Link>
 
-                        <button
-                            onClick={() => {
-                                props.setConfirmRidePopupPanel(false)
-                                props.setRidePopupPanel(false);
-                            }
-                            }
-                            className='w-full bg-gray-200 hover:bg-gray-300 transition-colors rounded-lg text-gray-700 font-semibold p-3'
-                        >
-                            Cancle
-                        </button>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        props.setConfirmRidePopupPanel(false)
+                                        props.setRidePopupPanel(false);
+                                    }}
+                                    className='w-full bg-gray-200 hover:bg-gray-300 transition-colors rounded-lg text-gray-700 font-semibold p-3'
+                                >
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
