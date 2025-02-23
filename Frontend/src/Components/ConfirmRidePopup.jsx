@@ -81,12 +81,14 @@ const ConfirmRidePopup = (props) => {
 
                     {/* Action Buttons */}
                     <div className='space-y-3 mt-6'>
-                        <Link
+                       <div className='w-full flex items-center justify-center bg-green-500 hover:bg-green-600 transition-colors rounded-lg text-white font-semibold p-3'>
+                       <Link
                             to='/captain-riding'
-                            className='w-full bg-green-500 hover:bg-green-600 transition-colors rounded-lg text-white font-semibold p-3'
+                            
                         >
                             Confirm
                         </Link>
+                       </div>
 
                         <button
                             onClick={() => {
