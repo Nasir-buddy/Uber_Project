@@ -86,7 +86,7 @@ const FinishRide = (props) => {
                                     to='/captain-riding'
                                     className='block w-full text-center bg-green-500 hover:bg-green-600 transition-colors rounded-lg text-white font-semibold p-3'
                                 >
-                                    Cpomplete Ride
+                                    Finish Ride
                                 </Link>
                             </div>
                     </div>
