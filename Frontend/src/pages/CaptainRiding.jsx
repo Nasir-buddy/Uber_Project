@@ -28,7 +28,7 @@ const CaptainRiding = () => {
                                 // setRidePopupPanel(false);
                             }}
                         >
-                            <i className="ri-arrow-down-fill text-gray-500 text-xl hover:text-gray-700 transition-colors"></i>
+                            <i className="ri-arrow-up-fill text-gray-500 text-xl hover:text-gray-700 transition-colors"></i>
                         </div>
                     </div>
                     <h4 className='text-lg font-semibold mb-3'>
