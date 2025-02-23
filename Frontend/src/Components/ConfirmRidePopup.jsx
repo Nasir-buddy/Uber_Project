@@ -1,7 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 const ConfirmRidePopup = (props) => {
+    const [OTP, setOTP] = useState("")
     const { setRidePopupPanel } = props;
+    const submitHandler = (e) => {
+        e.preventDefault();
+        // setRidePopupPanel(false);
+    }
 
     return (
         <div className='  overflow-y-auto'>
@@ -84,6 +89,8 @@ const ConfirmRidePopup = (props) => {
                     <div className='space-y-4 mt-6 px-2'>
                         <form onSubmit={(e) => submitHandler(e)}>
                             <input
+                                onChange={(e) => setOTP(e.target.value)}
+                                value={OTP}
                                 className='border px-4 py-3 text-base rounded-lg w-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500'
                                 type="text" 
                                 placeholder='Enter the OTP'
