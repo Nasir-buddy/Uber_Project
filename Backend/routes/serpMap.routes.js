@@ -10,4 +10,11 @@ router.get('/getCoordinates',
     query('address').isString().isLength({ min: 3 }),
     authMiddleware.authUser, getCoordinates, async (req, res) => {
     });
+
+router.get('/getDistance',
+    query('origin').isString().isLength({ min: 3 }),
+    query('destination').isString().isLength({ min: 3 }),
+    authMiddleware.authUser, mapController.getDistanceTime, async (req, res) => {
+    });
+
 module.exports = router;

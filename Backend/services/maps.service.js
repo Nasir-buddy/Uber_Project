@@ -61,3 +61,44 @@ module.exports.getAddressCordinate = async (address) => {
         throw error;
     }
 };
+
+module.exports.getDistanceTime = async (origin, destination) => {
+    if(!origin || !destination) {
+        throw new Error('Invalid or missing origin or destination parameter');
+    }
+    const apiKey = process.env.SERPAPI_API_KEY;
+    if (!apiKey) {
+        throw new Error('API key is missing');
+    }
+    try {
+        const response = await new Promise((resolve, reject) => {
+            getJson({
+                engine: "google_maps",
+                type: "directions",
+                origin: origin.trim(),
+                destination: destination.trim(),
+                api_key: apiKey
+            }, (json) => {
+                console.log('SerpAPI Response:', JSON.stringify(json, null, 2));
+                if (json.error) {
+                    reject(new Error(json.error));
+                } else {
+                    resolve(json);
+                }
+            });
+        });
+
+        if (!response.routes || response.routes.length === 0) {
+            throw new Error('No routes found in the response');
+        }
+
+        const route = response.routes[0];
+        return {
+            distance: route.legs[0].distance.text,
+            duration: route.legs[0].duration.text
+        };
+    } catch (error) {
+        console.error('Error getting distance and time:', error.message);
+        throw error;
+    }
+}
